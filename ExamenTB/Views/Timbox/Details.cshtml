@@ -1,0 +1,57 @@
+﻿@model ExamenTB.Models.ApplicationUser
+
+@{
+    ViewBag.Title = "Detalles";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Cuenta: @Html.DisplayFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+           @Html.Label("nombre", "Nombre")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+
+        <dt>
+            @Html.Label("rfc", "RFC")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rfc)
+        </dd>
+
+        <dt>
+            @Html.Label("direccion", "Dirección")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.direccion)
+        </dd>
+
+        <dt>
+            @Html.Label("telefono", "Teléfono")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefono)
+        </dd>
+
+        <dt>
+            @Html.Label("website", "Website")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.website)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Regresar", "Index")
+</p>

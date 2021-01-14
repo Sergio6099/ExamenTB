@@ -1,0 +1,63 @@
+﻿@model ExamenTB.Models.ApplicationUser
+
+@{
+    ViewBag.Title = "Eliminar";
+}
+
+<h2>Eliminar</h2>
+
+<h3>Realmente desea eliminar este registro?</h3>
+<div>
+    <h4>Cuenta: @Html.DisplayFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.Label("nombre", "Nombre")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+
+        <dt>
+            @Html.Label("rfc", "RFC")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rfc)
+        </dd>
+
+        <dt>
+            @Html.Label("direccion", "Dirección")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.direccion)
+        </dd>
+
+        <dt>
+            @Html.Label("telefono", "Teléfono")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefono)
+        </dd>
+
+        <dt>
+            @Html.Label("website", "Website")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.website)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Regresar", "Index")
+        </div>
+    }
+</div>
